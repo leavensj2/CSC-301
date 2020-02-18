@@ -4,32 +4,37 @@
         "breed": "Vizsla",
         "picture": "https:\/\/cf.ltkcdn.net\/dogs\/images\/orig\/252973-1600x1030-vizsla-dog-breed-traits.jpg",
         "gender": "Male",
-        "location": "Covington, KY"
+        "location": "Covington, KY",
+        "age": "1"
     },
     {
         "name": "Max",
         "breed": "Labrador",
         "picture": "https:\/\/cdn.orvis.com\/images\/DBS_Lab_1280.jpg",
         "gender": "Male",
-        "location": "Montgomery OH"
+        "location": "Montgomery OH",
+        "age": "2"
     },
     {
         "name": "Cassie",
         "breed": "Western Terrier",
         "picture": "https:\/\/cdn.britannica.com\/s:700x500\/02\/198002-050-452BDBD2\/West-Highland-White-Terrier.jpg",
         "gender": "Female",
-        "location": "Bellvue KY"
+        "location": "Bellvue KY",
+        "age": "9"
     },
     {
         "name": "Bart",
         "breed": "Pitbull",
         "picture": "https:\/\/www.loveyourdog.com\/wp-content\/uploads\/2019\/08\/Pitbull-Terrier-Mixes.jpg",
         "gender": "Male",
-        "location": "Cincinnati, OH"
+        "location": "Cincinnati, OH",
+        "age": "7"
     },
     {
         "name": "Buddy",
         "breed": "Dalmation",
+        "age": "4",
         "picture": "https:\/\/petcentral.chewy.com\/wp-content\/uploads\/dalmatian-main-1.jpg",
         "gender": "Male",
         "location": "Florence, KY"
@@ -40,6 +45,7 @@
         "age": "6",
         "gender": "Male",
         "bio": "Loving Dog",
-        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg"
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Florence, KY"
     }
 ]
