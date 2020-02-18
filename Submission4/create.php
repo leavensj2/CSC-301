@@ -87,7 +87,12 @@ $title = 'Home Finder';
       <label for="dogBio">Biography</label>
       <textarea class="form-control" id="dogBio" rows="3" name="dogBio"></textarea>
     </div>
-  <input type="submit" value="Submit">
+  <div class="form-group">
+      <label for="dogPicture">Image Link</label>
+      <input type="$json_string" class="form-control" id="dogPicture" placeholder="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2019/02/dog-451643.jpg?h=bf654dbc&itok=MQGvBmuo" name="dogPicture">
+    </div>
+    <input type="submit" value="Submit">
+  
 </form>
 
 
