@@ -79,6 +79,8 @@ for($i=0;$i<count($dogs);$i++){
     <p class="card-text">'.$dogs[$i]['breed'].'</p>
     <a href="detail.php?id='.$i.'" class="btn btn-primary">More Information</a>
     <a href="processEdit.php?id='.$i.'" class="btn btn-primary">Edit</a>
+    <a href="delete.php?id='.$i.'" class="btn btn-primary">Delete</a>
+
     </div>
   </div>
 	</div>';

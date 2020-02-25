@@ -86,7 +86,7 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
         </div>
       <div class="form-group">
           <label for="dogPicture">Image Link</label>
-          <input type="$json_string" class="form-control" id="dogPicture" placeholder="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2019/02/dog-451643.jpg?h=bf654dbc&itok=MQGvBmuo" name="dogPicture">
+          <input type="$json_string" class="form-control" id="dogPicture" placeholder="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2019/02/dog-451643.jpg?h=bf654dbc&itok=MQGvBmuo" name="dogPicture" value="<?= $dogs[$_GET['id']]['picture'] ?>">
         </div>
         <input type="submit" value="Submit">
 
