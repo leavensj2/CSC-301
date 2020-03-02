@@ -20,7 +20,8 @@ $formData = array(
   'age'=>$_POST['dogAge'],
   'gender'=> $_POST['dogGender'],
   'bio'=> $_POST['dogBio'],
-  'picture'=> $_POST['dogPicture']
+  'picture'=> $_POST['dogPicture'],
+  'location' => $_POST['location']
 );
 
 
@@ -109,4 +110,3 @@ $title = 'Home Finder';
 
 
 </div>
-

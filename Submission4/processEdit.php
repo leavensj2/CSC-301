@@ -1,14 +1,12 @@
 
 <?php
-//Allows for the storage of the Array in data.php
-//include('data.php')
 
 //Allows for the storage of the Array in JSON Files
 $json_string = file_get_contents('data.json');
 $dogs=json_decode($json_string, true);
-?>
 
-<?php
+
+
 $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
 
  ?>
@@ -88,9 +86,40 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
           <label for="dogPicture">Image Link</label>
           <input type="$json_string" class="form-control" id="dogPicture" placeholder="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2019/02/dog-451643.jpg?h=bf654dbc&itok=MQGvBmuo" name="dogPicture" value="<?= $dogs[$_GET['id']]['picture'] ?>">
         </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="$json_string" class="form-control" id="location" placeholder="Doggo" name="location" value="<?= $dogs[$_GET['id']]['location'] ?>">
+        </div>
         <input type="submit" value="Submit">
 
     </form>
+
+    <?php
+    //Variables that are pretty much always needed.  Can copy for future pages :)
+    require_once('functions.php');
+    $dogs = jsonToArray('data.json');
+    $myFile = "data.json";
+    $title = 'Pet Finder';
+
+    //Code to Delete Specified Index in Array
+    unset($dogs[$_GET['id']]);
+
+    //Re-Index The Array
+    $tempArray = array_values($dogs);
+    print_r($tempArray);
+
+    //Convert updated array to JSON
+    $jsondata = json_encode($tempArray, JSON_PRETTY_PRINT);
+
+    //Write JSON Data into data.json File
+    if(file_put_contents($myFile, $jsondata)) {
+         echo 'Data file updated: Ready for addition of updated element';
+     }
+    else
+         echo "error";
+
+
+    ?>
 
 
 

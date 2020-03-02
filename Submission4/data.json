@@ -24,28 +24,12 @@
         "age": "9"
     },
     {
-        "name": "Bart",
-        "breed": "Pitbull",
-        "picture": "https:\/\/www.loveyourdog.com\/wp-content\/uploads\/2019\/08\/Pitbull-Terrier-Mixes.jpg",
-        "gender": "Male",
-        "location": "Cincinnati, OH",
-        "age": "7"
-    },
-    {
-        "name": "Buddy",
+        "name": "Frankie",
         "breed": "Dalmation",
-        "age": "4",
+        "age": "1",
+        "gender": "Female",
+        "bio": "",
         "picture": "https:\/\/petcentral.chewy.com\/wp-content\/uploads\/dalmatian-main-1.jpg",
-        "gender": "Male",
-        "location": "Florence, KY"
-    },
-    {
-        "name": "Max",
-        "breed": "German Shepard",
-        "age": "6",
-        "gender": "Male",
-        "bio": "Loving Dog",
-        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
         "location": "Florence, KY"
     }
 ]
