@@ -91,6 +91,10 @@ $title = 'Home Finder';
       <label for="dogPicture">Image Link</label>
       <input type="$json_string" class="form-control" id="dogPicture" placeholder="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2019/02/dog-451643.jpg?h=bf654dbc&itok=MQGvBmuo" name="dogPicture">
     </div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="$json_string" class="form-control" id="location" name="location">
+    </div>
     <input type="submit" value="Submit">
 
 </form>
