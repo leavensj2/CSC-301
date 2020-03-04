@@ -1,5 +1,5 @@
 #Progress and Iterations of Final Web Programming Project
-
+(Don't Mind the ._ Files.  They are metadata from Mac OS because it doesn't like to play well with Windows)
 
 Assignment 5 :
 

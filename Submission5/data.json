@@ -25,5 +25,14 @@
         "bio": "",
         "picture": "https:\/\/cdn.britannica.com\/s:700x500\/02\/198002-050-452BDBD2\/West-Highland-White-Terrier.jpg",
         "location": "Bellvue KY"
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "1",
+        "gender": "Male",
+        "bio": "",
+        "picture": "https:\/\/www.yourpurebredpuppy.com\/dogbreeds\/photos2-G\/german-shepherd-05.jpg",
+        "location": "Cincinnati, OH"
     }
 ]
