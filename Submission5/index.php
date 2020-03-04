@@ -14,22 +14,9 @@ $title = 'Pet Finder';
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400" rel="stylesheet">
   </head>
   <body>
-  <div class="bg-dark navbar-dark text-white">
-    <div class="container">
-      <nav class="navbar px-0 navbar-expand-lg navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a href="index.php" class="pl-md-0 p-3 text-light">Home</a>
-            <a href="app.php" class="p-3 text-decoration-none text-light">Find Pet</a>
-            <a href="create.php" class="p-3 text-decoration-none text-light">Find Home</a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </div>
+    <?php
+    require 'nav.php'
+    ?>
 <div class="jumbotron jumbotron-fullheight jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0">
   <div class="container">
       <h1 class="display-2 text-light text-uppercase">Pet Finder</h1>

@@ -1,0 +1,9 @@
+<?php
+$title = 'Logout';
+ ?>
+
+
+
+<?php
+
+?>

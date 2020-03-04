@@ -35,23 +35,9 @@ $title = 'Home Finder';
   </head>
   <body>
 
-  <div class="bg-dark navbar-dark text-white">
-    <div class="container">
-      <nav class="navbar px-0 navbar-expand-lg navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a href="index.php" class="pl-md-0 p-3 text-light">Home</a>
-            <a href="app.php" class="p-3 text-decoration-none text-light">Find Pet</a>
-            <a href="create.php" class="p-3 text-decoration-none text-light">Find Home</a>
-          </div>
-        </div>
-      </nav>
-
-    </div>
-  </div>
+    <?php
+    require 'nav.php'
+    ?>
 
   <div class="container py-5 mb5">
     <h1 class="mb-5">Pet Adoption Form</h1>
@@ -98,7 +84,4 @@ $title = 'Home Finder';
     <input type="submit" value="Submit">
 
 </form>
-
-
-
 </div>

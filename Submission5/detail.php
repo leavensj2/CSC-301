@@ -1,7 +1,5 @@
 
 <?php
-//Allows for the storage of the Array in data.php
-//include('data.php')
 
 //Allows for the storage of the Array in JSON Files
 $json_string = file_get_contents('data.json');
@@ -33,23 +31,9 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
   </head>
   <body>
 
-  <div class="bg-dark navbar-dark text-white">
-    <div class="container">
-      <nav class="navbar px-0 navbar-expand-lg navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a href="index.php" class="pl-md-0 p-3 text-light">Home</a>
-            <!-- <a href="app.php" class="p-3 text-decoration-none text-light">Pets</a>
-            <a href="detail.php" class="p-3 text-decoration-none text-light">Form example</a> -->
-          </div>
-        </div>
-      </nav>
-
-    </div>
-  </div>
+    <?php
+    require 'nav.php'
+    ?>
 
   <div class="container py-5 mb5">
     <h1 class="mb-5">Detail Page</h1>
