@@ -30,15 +30,18 @@ if (isset($result[$user]))
   if (password_verify($pass, $result[$user])){
     //Valid Email and Pass
     echo 'Validated Successfully';
+    //Start Session!
   }
   else {
     //Valid Email, Invalid Pass
     echo "Password Incorrect";
+    //Don't Start Session!
   }
 }
 else {
   //Wrong Email Input
   echo "Email not Recognized";
+  //Don't Start Session
 }
 
 }
