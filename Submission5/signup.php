@@ -28,12 +28,14 @@ $jsondata = file_get_contents($myFile);
 
 // Convert JSON data into array
 $arr_data = json_decode($jsondata, true);
-print_r($arr_data);
-//VERIFY THAT EMAIL DOES NOT ALREADY EXIST IN DATABASE
-if (in_array($username, $arr_data)) {
-    echo "User already exists";
-    exit;
-}
+
+
+// - - - - - - VERIFY THAT EMAIL DOES NOT ALREADY EXIST IN DATABASE - - - - - -
+
+//needs completed
+
+// - - - - - -       - - - - - - -      - - - - - -       - - - - - - -      - - - - - -
+
 
 
 // Push user data to array
@@ -119,15 +121,6 @@ $title = 'Signup'
         <div class="controls">
           <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
           <p class="help-block">Password should be at least 4 characters</p>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <!-- Password -->
-        <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-        <div class="controls">
-          <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
-          <p class="help-block">Please confirm password</p>
         </div>
       </div>
 
