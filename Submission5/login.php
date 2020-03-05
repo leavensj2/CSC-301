@@ -1,10 +1,64 @@
 <!doctype html>
 
-<?php
-require 'nav.php'
+<?
+//Area to Handle Authentication
+if (isset ($_POST["inputEmail"])){
+
+//Define Username to Compare Against Database
+$user = ($_POST["inputEmail"]);
+$pass = ($_POST["inputPassword"]);
+
+//Define JSON File Name For Users
+$myFile = "users.json";
+
+//Get Data from Existing Json User FILE
+$jsondata = file_get_contents($myFile);
+
+// Convert JSON data into array
+$arr_data = json_decode($jsondata, true);
+
+//Validates Credentials
+foreach ($arr_data as $element)
+{
+$passCheck = current($arr_data);
+$userDataString = (implode("=", $passCheck));
+$userDataString = rtrim($userDataString, ":");
+$user = str_replace(".", "_", $user);
+parse_str($userDataString, $result);
+if (isset($result[$user]))
+{
+  if (password_verify($pass, $result[$user])){
+    //Valid Email and Pass
+    echo 'Validated Successfully';
+  }
+  else {
+    //Valid Email, Invalid Pass
+    echo "Password Incorrect";
+  }
+}
+else {
+  //Wrong Email Input
+  echo "Email not Recognized";
+}
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
 <?php
+require 'nav.php';
 $title = 'Login';
  ?>
 
@@ -50,9 +104,9 @@ $title = 'Login';
     <form class="form-signin" action="" method="POST">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="inputEmail">
+      <label for="inputPassword" class="sr-only" name="inputPassword">Password</label>
+      <input type="password" id="inputPassword" name = "inputPassword" class="form-control" placeholder="Password" required>
       <div class="checkbox mb-3">
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
