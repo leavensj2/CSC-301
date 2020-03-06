@@ -63,9 +63,13 @@ for($i=0;$i<count($dogs);$i++){
     <h5 class="card-title">'.$dogs[$i]['name'].'</h5>
     <span class="badge badge-light">'.$dogs[$i]['gender'].'</span>
     <p class="card-text">'.$dogs[$i]['breed'].'</p>
-    <a href="detail.php?id='.$i.'" class="btn btn-primary">More Information</a>
+    <a href="detail.php?id='.$i.'" class="btn btn-primary">More Information</a>'
+
+/*
+    //Only Display if Session is Set and Only Display for Owner of Listing
     <a href="processEdit.php?id='.$i.'" class="btn btn-primary">Edit</a>
     <a href="delete.php?id='.$i.'" class="btn btn-primary">Delete</a>
+*/
 
     </div>
   </div>
