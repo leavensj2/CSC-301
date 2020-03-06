@@ -1,4 +1,6 @@
 <?php
+session_start();
+require 'nav.php';
 $title = 'Pet Finder';
  ?>
 <!DOCTYPE html>
@@ -14,9 +16,6 @@ $title = 'Pet Finder';
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400" rel="stylesheet">
   </head>
   <body>
-    <?php
-    require 'nav.php'
-    ?>
 <div class="jumbotron jumbotron-fullheight jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0">
   <div class="container">
       <h1 class="display-2 text-light text-uppercase">Pet Finder</h1>

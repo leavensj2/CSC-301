@@ -1,6 +1,5 @@
 <?php
 session_start();
-require 'nav.php'
 ?>
 
 <?php
@@ -28,3 +27,5 @@ $title = 'Logout';
     session_destroy();
     echo 'Logged Out Successfully!';
  ?>
+
+<h2 class="h3 mb-3 font-weight-normal"><a href="login.php">Log Back In Here!</a></h2>

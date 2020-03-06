@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
 //Allows for the storage of the Array in JSON Files
 $json_string = file_get_contents('data.json');
 $dogs=json_decode($json_string, true);

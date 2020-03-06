@@ -33,8 +33,7 @@ if (isset($result[$user]))
     //Start Session!
     session_start();
     $_SESSION["user"] = $user;
-    print_r($_SESSION);
-    session_destroy();
+    //print_r($_SESSION);
   }
   else {
     //Valid Email, Invalid Pass

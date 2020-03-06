@@ -1,8 +1,12 @@
 <?php
+session_start();
 //Define JSON File Name
 $myFile = "data.json";
 //Create Empty Array
 $arr_data = array();
+
+$user = $_SESSION["user"];
+$user = str_replace ('_', '.', $user);
 
 
 //Get Form Data
@@ -21,7 +25,8 @@ $formData = array(
   'gender'=> $_POST['dogGender'],
   'bio'=> $_POST['dogBio'],
   'picture'=> $_POST['dogPicture'],
-  'location' => $_POST['location']
+  'location' => $_POST['location'],
+  'owner' => $user
 );
 
 
