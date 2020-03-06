@@ -8,17 +8,44 @@
         <div class="navbar-nav">
           <a href="index.php" class="pl-md-0 p-3 text-light">Home</a>
           <a href="app.php" class="p-3 text-decoration-none text-light">Find Pet</a>
-          <a href="create.php" class="p-3 text-decoration-none text-light">Find Home</a>
+          <?php
+          if (isset($_SESSION['user'])) {
+            echo '<a href="create.php" class="p-3 text-decoration-none text-light">Find Home</a>';
+          }
+           ?>
+
         </div>
       </div>
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+          <?php
+          if (!isset($_SESSION['user'])) {
+            echo '<li class="nav-item">
                 <a class="nav-link" href="login.php">Login</a>
-            </li>
-            <li class="nav-item">
+            </li>';
+
+          }
+
+
+           ?>
+            <?php
+            if (isset($_SESSION['user'])) {
+            echo '<li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
-            </li>
+            </li>';
+          }
+            ?>
+            <?php
+            if (isset($_SESSION['user'])) {
+              echo '
+              <li class="nav-item">
+                  <a class="nav-link" href="myPage.php">My Page</a>
+              </li>
+              ';
+            }
+
+
+            ?>
         </ul>
     </div>
     </nav>

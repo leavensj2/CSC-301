@@ -1,5 +1,5 @@
-
 <?php
+session_start();
 require 'nav.php'
 ?>
 
@@ -23,3 +23,8 @@ $title = 'Logout';
 
 
 </head>
+
+<?php
+    session_destroy();
+    echo 'Logged Out Successfully!';
+ ?>
