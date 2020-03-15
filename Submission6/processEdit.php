@@ -1,4 +1,3 @@
-
 <?php
 
 //Allows for the storage of the Array in JSON Files
@@ -94,6 +93,7 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
 
     </form>
 
+
     <?php
     //Variables that are pretty much always needed.  Can copy for future pages :)
     require_once('functions.php');
@@ -117,8 +117,7 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
      }
     else
          echo "error";
-
-
+         
     ?>
 
 

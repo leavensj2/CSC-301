@@ -19,31 +19,6 @@ function read($filename){
 }
 
 
-/*
-function readCSV($filename, $target = null)
-{
-  $handle = fopen($filename,'r');
-  $temp=[];
-  $counter = 0;
-  while(!feof($handle)) {
-    if($target==null || $counter<$target)
-    {
-      fgets($handle);
-      $counter++;
-      continue;
-    }
-    else {
-    $temp[] = explode(';', fgets($handle));
-    fclose($handle);
-    return $temp;
-
-    }
-  }
-fclose($handle);
-return $temp;
-}
-*/
-
 function readCSV($file){
   $handle=fopen($file, 'r');
   $output=[];
