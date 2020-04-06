@@ -1,12 +1,19 @@
 (Don't Mind the ._ Files.  They are metadata from Mac OS because it doesn't like to play well with Windows)
 
-Assignment 5 :
+Assignment 9: Create the DB class and fundamental queries
 
-Add authentication to your individual project. Create three pages:
+Create the database class for your individual project and make the necessary changes to switch data source from files to database.
 
-sign up: a form that enables users to create their account and save their credentials in a data source
-sign in: a form that enables users to access their account by checking their credentials with those saved in a data source
-sign out: a page that logs the user out of the application
-Use PHP Sessions to enable ony registered users to create, edit, or delete entities.
+Implement necessary queries for the index/detail pages and for the view/create/edit/delete features for the main entity of your project and for the user entity.
 
-Submit the URL  of the GitHub repository.
+Submit the URL to the repository on GitHub.
+
+
+
+Assignment 10: implement the admin section of your website
+
+Create a section of your website that enables super admins to create and edit users and entities.
+
+Add the necessary PHP pages and modify the database as needed.
+
+Submit the URL of the GitHub repository.

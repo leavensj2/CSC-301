@@ -1,29 +1,39 @@
-//Connection to MySQL Test
 
 <?php
-//Your MySQL user account.
-$user = 'root';
- 
-//Your MySQL password.
-$password = 'password';
- 
-//The server / hostname of your MySQL installation.
-$server = 'localhost';
- 
-//The name of your MySQL database.
-$database = 'dogadoption_db';
- 
-//Connect using PDO.
-//$pdo = new PDO("mysql:host=$server;dbname=$database", $user, $password);
-if ($pdo = new PDO("mysql:host=$server;dbname=$database", $user, $password))
-{
-	print '<p>Successfully -> connected to the database! -> </p>';
-	mysqli_close($dbc);
+
+$settings = [
+	'host' => 'localhost',
+	'db' => 'dogadoption_db',
+	'user' => 'root',
+	'password' => 'password'
+];
+
+$opt = [
+PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+PDO::ATTR_EMULATE_PREPARES => false
+];
+
+//Establish Connection to DB
+$pdo = new PDO('mysql:host='.$settings['host'].';dbname='.$settings['db'].';charset=utf8mb4',$settings['user'],$settings['password'], $opt);
+
+//Execute Query
+$result=$pdo->query('SELECT * FROM dog_table');
+
+
+//Process Result
+echo '<pre>';
+while ($record=$result->fetch()){
+	print_r($record);
+	echo '<hr>';
+	
 }
-else
-{
-	print '<p> -> Could not connect to the -> database </p>';
-}
+
+
+
+
+
+
 
 
 ?>
