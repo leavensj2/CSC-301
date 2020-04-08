@@ -44,24 +44,29 @@ $title = 'Pet Finder';
    $dogs = jsonToArray('data.json');
    $user = $_SESSION["user"];
    $user = str_replace ('_', '.', $user);
-   for($i=0;$i<count($dogs);$i++){
-     if (($dogs[$i]['owner']) == $user)
-     {
-       echo '<div class="col-sm-3">';
-       echo '<div class="card" style="width: 18rem;">
-         <img src="'.$dogs[$i]['picture'].'" class="card-img-top" height="180">
-         <div class="card-body">
-         <h5 class="card-title">'.$dogs[$i]['name'].'</h5>
-         <span class="badge badge-light">'.$dogs[$i]['gender'].'</span>
-         <p class="card-text">'.$dogs[$i]['breed'].'</p>
-         <a href="detail.php?id='.$i.'" class="btn btn-primary">More Information</a>
-         <a href="processEdit.php?id='.$i.'" class="btn btn-primary">Edit</a>
-         <a href="delete.php?id='.$i.'" class="btn btn-primary">Delete</a>
-         </div>
-       </div>
-       </div>';
-     }
-   }
+
+require 'sql.php';
+$result=$pdo->query('SELECT Name, Picture, Breed, Gender, Age, Owner, id FROM dog_table');
+
+while($record=$result->fetch()){
+	if ($record['Owner'] == $user){
+echo '<div class="col-sm-3">';
+  echo '<div class="card" style="width: 18rem;">
+    <img src="'.$record['Picture'].'" class="card-img-top" height="180">
+    <div class="card-body">
+    <h5 class="card-title">'.$record['Name'].'</h5>
+    <span class="badge badge-light">'.$record['Gender'].'</span>
+    <p class="card-text">'.$record['Breed'].'</p>
+    <a href="detail.php?id='.$record['id'].'" class="btn btn-primary">More Information</a>
+    <a href="processEdit.php?id='.$record['id'].'" class="btn btn-primary"> Edit</a>
+    <a href="delete.php?id='.$record['id'].'" class="btn btn-primary"> Delete</a>';
+
+    echo '</div>
+  </div>
+	</div>';
+	}
+}
+
 
 
 

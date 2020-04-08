@@ -25,10 +25,6 @@ $title = 'Pet Finder';
            class="btn btn-danger btn-lg m-2 btn-wide">
           <span>Find Pet</span>
         </a>
-        <a href="create.php"
-           class="btn btn-outline-light btn-hover-text-dark btn-wide btn-lg m-2">
-          <span>Find Home</span>
-        </a>
       </div>
   </div>
 </div>

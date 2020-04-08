@@ -1,12 +1,16 @@
 <?php
 
-//Allows for the storage of the Array in JSON Files
-$json_string = file_get_contents('data.json');
-$dogs=json_decode($json_string, true);
+require 'sql.php';
+
+session_start();
+$user = $_SESSION["user"];
+$user = str_replace ('_', '.', $user);
 
 
+$result=$pdo->query("SELECT Name, Picture, Breed, Gender, Age, Owner, Bio, Location, id FROM dog_table WHERE Owner = '$user' ");
+$record=$result->fetch();
 
-$title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
+$title = $record['Name'].' - '.$record['Owner'];
 
  ?>
 
@@ -55,15 +59,15 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
     <form action="process.php" method="POST">
         <div class="form-group">
           <label for="dogName">Name</label>
-          <input type="$json_string" class="form-control" id="dogName" placeholder="Doggo" name="dogName" value="<?= $dogs[$_GET['id']]['name'] ?>">
+          <input type="$json_string" class="form-control" id="dogName" placeholder="Doggo" name="dogName" value="<?= $record['Name'] ?>">
         </div>
         <div class="form-group">
           <label for="dogBreed">Breed</label>
-          <input type="$json_string" class="form-control" id="dogBreed" placeholder="German Shepard" name="dogBreed" value="<?= $dogs[$_GET['id']]['breed'] ?>">
+          <input type="$json_string" class="form-control" id="dogBreed" placeholder="German Shepard" name="dogBreed" value="<?= $record['Breed'] ?>">
         </div>
         <div class="form-group">
           <label for="dogAge">Age</label>
-          <select class="form-control" id="dogAge" name="dogAge" value="<?= $dogs[$_GET['id']]['age'] ?>">
+          <select class="form-control" id="dogAge" name="dogAge" value="<?= $record['Age'] ?>">
             <?php
             for ($i = 1; $i < 18; $i++){
               echo '<option>'.$i.'</option>';
@@ -72,22 +76,22 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
         </div>
         <div class="form-group">
           <label for="dogGender">Gender</label>
-          <select class="form-control" id="dogGender" name="dogGender" value="<?= $dogs[$_GET['id']]['gender'] ?>">
+          <select class="form-control" id="dogGender" name="dogGender" value="<?= $record['Gender'] ?>">
     <option>Male</option>
     <option>Female</option>
           </select>
         </div>
         <div class="form-group">
           <label for="dogBio">Biography</label>
-          <textarea class="form-control" id="dogBio" rows="3" name="dogBio" value="<?= $dogs[$_GET['id']]['bio'] ?>"></textarea>
+          <textarea class="form-control" id="dogBio" rows="3" name="dogBio" value="<?= $record['Bio'] ?>"></textarea>
         </div>
       <div class="form-group">
           <label for="dogPicture">Image Link</label>
-          <input type="$json_string" class="form-control" id="dogPicture" placeholder="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2019/02/dog-451643.jpg?h=bf654dbc&itok=MQGvBmuo" name="dogPicture" value="<?= $dogs[$_GET['id']]['picture'] ?>">
+          <input type="$json_string" class="form-control" id="dogPicture" placeholder="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2019/02/dog-451643.jpg?h=bf654dbc&itok=MQGvBmuo" name="dogPicture" value="<?= $record['Picture'] ?>">
         </div>
         <div class="form-group">
           <label for="location">Location</label>
-          <input type="$json_string" class="form-control" id="location" placeholder="Doggo" name="location" value="<?= $dogs[$_GET['id']]['location'] ?>">
+          <input type="$json_string" class="form-control" id="location" placeholder="Doggo" name="location" value="<?= $record['Location'] ?>">
         </div>
         <input type="submit" value="Submit">
 
@@ -95,29 +99,17 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
 
 
     <?php
-    //Variables that are pretty much always needed.  Can copy for future pages :)
-    require_once('functions.php');
-    $dogs = jsonToArray('data.json');
-    $myFile = "data.json";
-    $title = 'Pet Finder';
 
-    //Code to Delete Specified Index in Array
-    unset($dogs[$_GET['id']]);
 
-    //Re-Index The Array
-    $tempArray = array_values($dogs);
-    print_r($tempArray);
+// / / / / / / / / / / / / / SECTION FOR SQL MIGRATION / / / / / / / / / / / / /
 
-    //Convert updated array to JSON
-    $jsondata = json_encode($tempArray, JSON_PRETTY_PRINT);
 
-    //Write JSON Data into data.json File
-    if(file_put_contents($myFile, $jsondata)) {
-         echo 'Data file updated: Ready for addition of updated element';
-     }
-    else
-         echo "error";
-         
+$result=$pdo->query('DELETE FROM dog_table WHERE id ='.$_GET['id']);
+$record=$result->fetch();
+
+
+
+
     ?>
 
 

@@ -1,28 +1,9 @@
 
 <?php
-//Variables that are pretty much always needed.  Can copy for future pages :)
-require_once('functions.php');
-$dogs = jsonToArray('data.json');
-$myFile = "data.json";
-$title = 'Pet Finder';
 
-//Code to Delete Specified Index in Array
-unset($dogs[$_GET['id']]);
-
-//Re-Index The Array
-$tempArray = array_values($dogs);
-print_r($tempArray);
-
-//Convert updated array to JSON
-$jsondata = json_encode($tempArray, JSON_PRETTY_PRINT);
-
-//Write JSON Data into data.json File
-if(file_put_contents($myFile, $jsondata)) {
-     echo 'Data successfully saved';
- }
-else
-     echo "error";
-
+require 'sql.php';
+$result=$pdo->query('DELETE FROM dog_table WHERE id ='.$_GET['id']);
+$record=$result->fetch();
 
 ?>
 

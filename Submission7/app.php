@@ -46,7 +46,8 @@ $title = 'Pet Finder';
   <body>
 
 <?php
-require 'nav.php'
+require 'nav.php';
+require 'sql.php';
 ?>
 
 
@@ -55,28 +56,25 @@ require 'nav.php'
   <h1 class="mb-5">Dogs Avalible for Adoption!</h1>
 
 <?php
-echo '<div class="row">';
-for($i=0;$i<count($dogs);$i++){
-	echo '<div class="col-sm-3">';
-  echo '<div class="card" style="width: 18rem;">
-    <img src="'.$dogs[$i]['picture'].'" class="card-img-top" height="180">
-    <div class="card-body">
-    <h5 class="card-title">'.$dogs[$i]['name'].'</h5>
-    <span class="badge badge-light">'.$dogs[$i]['gender'].'</span>
-    <p class="card-text">'.$dogs[$i]['breed'].'</p>
-    <a href="detail.php?id='.$i.'" class="btn btn-primary">More Information</a>';
+require 'sql.php';
+$result=$pdo->query('SELECT Name, Picture, Breed, Gender, Age, id FROM dog_table');
 
-/*
-    //Only Display if Session is Set and Only Display for Owner of Listing
-    <a href="processEdit.php?id='.$i.'" class="btn btn-primary">Edit</a>
-    <a href="delete.php?id='.$i.'" class="btn btn-primary">Delete</a>
-*/
+while($record=$result->fetch()){
+echo '<div class="col-sm-3">';
+  echo '<div class="card" style="width: 18rem;">
+    <img src="'.$record['Picture'].'" class="card-img-top" height="180">
+    <div class="card-body">
+    <h5 class="card-title">'.$record['Name'].'</h5>
+    <span class="badge badge-light">'.$record['Gender'].'</span>
+    <p class="card-text">'.$record['Breed'].'</p>
+    <a href="detail.php?id='.$record['id'].'" class="btn btn-primary">More Information</a>';
 
     echo '</div>
   </div>
 	</div>';
 }
-echo '</div>';
+
+
 ?>
 
 </div>

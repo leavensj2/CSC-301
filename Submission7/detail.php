@@ -32,19 +32,25 @@ $title = $dogs[$_GET['id']]['name'].' - '.$dogs[$_GET['id']]['breed']
   <body>
 
     <?php
-    require 'nav.php'
+    require 'nav.php';
+	require 'sql.php';
+	
+	$result=$pdo->query('SELECT Name, Picture, Breed, Gender, Location, Age, id FROM dog_table WHERE id ='.$_GET['id']);
+	$record=$result->fetch()
+
     ?>
 
   <div class="container py-5 mb5">
     <h1 class="mb-5">Detail Page</h1>
 
     <div class="container">
-      <h1><?= $dogs[$_GET['id']]['name'] ?></h1>
-      <img src="<?= $dogs[$_GET['id']]['picture'] ?>" style="max-width:500px" />
-      <p>Breed: <?= $dogs[$_GET['id']]['breed'] ?></p>
-      <p>Gender: <?= $dogs[$_GET['id']]['gender'] ?></p>
-      <p>Location: <span class="badge badge-secondary"><?= $dogs[$_GET['id']]['location'] ?></span></p>
+      <h1><?= $record['Name'] ?></h1>
+      <img src="<?= $record['Picture'] ?>" style="max-width:500px" />
+      <p>Breed: <?= $record['Breed'] ?></p>
+      <p>Gender: <?= $record['Gender'] ?></p>
+      <p>Location: <span class="badge badge-secondary"><?= $record['Location'] ?></span></p>
     </div>
+
 
 
 

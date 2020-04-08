@@ -10,16 +10,6 @@
         "owner": "branham.leavens@gmail.com"
     },
     {
-        "name": "Cassie",
-        "breed": "Western Terrier",
-        "age": "1",
-        "gender": "Male",
-        "bio": "",
-        "picture": "https:\/\/cdn.britannica.com\/s:700x500\/02\/198002-050-452BDBD2\/West-Highland-White-Terrier.jpg",
-        "location": "Bellvue KY",
-        "owner": "branham.leavens@gmail.com"
-    },
-    {
         "name": "Dugan",
         "breed": "Labradoodle",
         "age": "1",
@@ -27,6 +17,186 @@
         "bio": "",
         "picture": "https:\/\/media.gq.com\/photos\/5d8b7d81b14b3a000878599a\/1:1\/w_3003,h_3003,c_limit\/GettyImages-579267034.jpg",
         "location": "Milford, OH",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "4",
+        "gender": "Male",
+        "bio": "I am a dog!",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Loveland, OH",
+        "owner": ""
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "4",
+        "gender": "Male",
+        "bio": "I am a dog!",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Loveland, OH",
+        "owner": ""
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "4",
+        "gender": "Male",
+        "bio": "I am a dog!",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Loveland, OH",
+        "owner": ""
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "4",
+        "gender": "Male",
+        "bio": "I am a dog!",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Loveland, OH",
+        "owner": ""
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "4",
+        "gender": "Male",
+        "bio": "I am a dog!",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Loveland, OH",
+        "owner": ""
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "5",
+        "gender": "Male",
+        "bio": "I am a dog!",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Loveland, OH",
+        "owner": ""
+    },
+    {
+        "name": "fdsa",
+        "breed": "dafs",
+        "age": "5",
+        "gender": "Male",
+        "bio": "fdas",
+        "picture": "fdas",
+        "location": "dafs",
+        "owner": ""
+    },
+    {
+        "name": "Dog",
+        "breed": "Test",
+        "age": "1",
+        "gender": "Male",
+        "bio": "test",
+        "picture": "test",
+        "location": "test",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "DogTest",
+        "breed": "Vizsla",
+        "age": "4",
+        "gender": "Male",
+        "bio": "I am dog",
+        "picture": "picture",
+        "location": "Milford OH",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Dog",
+        "breed": "German Shepard",
+        "age": "8",
+        "gender": "Male",
+        "bio": "I am dog",
+        "picture": "picture",
+        "location": "Milford OH",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "1",
+        "gender": "Male",
+        "bio": "",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Loveland, OH",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "test",
+        "breed": "test",
+        "age": "1",
+        "gender": "Male",
+        "bio": "test",
+        "picture": "test",
+        "location": "test",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "1",
+        "gender": "Male",
+        "bio": "",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Loveland, OH",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Max",
+        "breed": "fds",
+        "age": "1",
+        "gender": "Male",
+        "bio": "",
+        "picture": "adfs",
+        "location": "dafs",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Max",
+        "breed": "German Shepard",
+        "age": "1",
+        "gender": "Male",
+        "bio": "",
+        "picture": "https:\/\/thehappypuppysite.com\/wp-content\/uploads\/2018\/12\/silver-german-shepherd-long.jpg",
+        "location": "Milford OH",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Success",
+        "breed": "Test",
+        "age": "1",
+        "gender": "Male",
+        "bio": "",
+        "picture": "test",
+        "location": "test",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Success",
+        "breed": "Test",
+        "age": "1",
+        "gender": "Male",
+        "bio": "",
+        "picture": "test",
+        "location": "test",
+        "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "test",
+        "breed": "test",
+        "age": "1",
+        "gender": "Male",
+        "bio": "test",
+        "picture": "test",
+        "location": "test",
         "owner": "branham.leavens@gmail.com"
     }
 ]

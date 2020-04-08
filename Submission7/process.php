@@ -18,9 +18,13 @@ $formData = array(
 );
 
 require_once('class.php');
+require 'sql.php';
 $pCreate = new Process();
 $pCreate->newDog($formData);
 
+//$result=$pdo->query('INSERT INTO dog_table(Name, Breed, Age, Gender, Bio, Picture, Location) VALUES('.$_POST["dogName"].','.$_POST["dogBreed"].','.$_POST["dogAge"].','.$_POST["dogGender"].','.$_POST["dogBio"].','.$_POST["dogPicture"].','.$_POST["location"]);
+//$result=$pdo->query('INSERT INTO dog_table(Name) VALUES('.$_POST["dogName"].')');
+$pdo->query('INSERT INTO dog_table(Name, Breed, Picture, Bio, Age, Location, Gender, Owner) VALUES ("'.$_POST["dogName"].'", "'.$_POST["dogBreed"].'", "'.$_POST["dogPicture"].'", "'.$_POST["dogBio"].'", "'.$_POST["dogAge"].'", "'.$_POST["location"].'", "'.$_POST["dogGender"].'", "'.$user.'")');
 ?>
 <!DOCTYPE html>
 <style>
