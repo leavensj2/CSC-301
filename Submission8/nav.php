@@ -46,6 +46,30 @@
 
 
             ?>
+
+            <?php
+            //Currently Broken
+            require 'sql.php';
+            //print_r($_SESSION['user']);
+            if (isset($_SESSION['user'])) {
+
+              $sql = 'SELECT admin FROM user_table WHERE username = "'.$_SESSION['user'].'"';
+              $stmt = $pdo->prepare($sql);
+              $var = $stmt->execute();
+              print_r($var);
+
+
+              if (($stmt->execute()) == 1)
+              {
+                echo'
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.php">Admin Page</a>
+                </li>
+                ';
+              }
+
+            }
+            ?>
         </ul>
     </div>
     </nav>

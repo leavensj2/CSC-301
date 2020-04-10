@@ -2,6 +2,7 @@
 
 <?php
 //Area to Handle Authentication!
+require 'sql.php';
 
 if (isset ($_POST["email"])){
 //Set Variables for Username and Password
@@ -10,46 +11,42 @@ $password = $_POST["password"];
 //Hash Password
 $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
-// ------ Write info to file ------
-
-//Define JSON File Name
-$myFile = "users.json";
-//Create Empty Array
-$user_data = array();
-
-//Populate Array with Form Information
-$userData = array(
-  'username'=> $username,
-  'password'=> $passwordHashed
-);
-
-//Get Data from Existing Json User FILE
-$jsondata = file_get_contents($myFile);
-
-// Convert JSON data into array
-$arr_data = json_decode($jsondata, true);
-
-
-// - - - - - - VERIFY THAT EMAIL DOES NOT ALREADY EXIST IN DATABASE - - - - - -
-
-//needs completed
-
-// - - - - - -       - - - - - - -      - - - - - -       - - - - - - -      - - - - - -
 
 
 
-// Push user data to array
-array_push($arr_data,$userData);
 
-//Convert updated array to JSON
-$jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
 
-//Write JSON Data into data.json File
-if(file_put_contents($myFile, $jsondata)) {
-     echo 'Data successfully saved';
- }
-else
-     echo "error";
+
+//The email we are looking for.
+$emailToLookFor = ($_POST["email"]);
+
+//The SQL query.
+$sql = "SELECT COUNT(*) AS num FROM `user_table` WHERE username = :email";
+
+//Prepare the SQL statement.
+$stmt = $pdo->prepare($sql);
+
+//Bind our email value to the :email parameter.
+$stmt->bindValue(':email', $emailToLookFor);
+
+//Execute the statement.
+$stmt->execute();
+
+//Fetch the row / result.
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//If num is bigger than 0, the email already exists.
+if($row['num'] > 0){
+    echo 'Username is Taken!';
+} else{
+    //echo 'Row does not exist!';
+    //Insert Record Into Database
+    $pdo->query('INSERT INTO user_table(username, password) VALUES ("'.$_POST["email"].'", "'.$_POST["password"].'")');
+    echo 'Account Created Successfully';
+}
+
+
+
 
 }
 

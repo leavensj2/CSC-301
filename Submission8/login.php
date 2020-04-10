@@ -1,6 +1,9 @@
 <!doctype html>
 
 <?
+//Import SQL Config
+require 'sql.php';
+
 //Area to Handle Authentication
 if (isset ($_POST["inputEmail"])){
 
@@ -8,59 +11,21 @@ if (isset ($_POST["inputEmail"])){
 $user = ($_POST["inputEmail"]);
 $pass = ($_POST["inputPassword"]);
 
-//Define JSON File Name For Users
-$myFile = "users.json";
+//Check for user in database
+$result=$pdo->query('SELECT username, password FROM user_table');
 
-//Get Data from Existing Json User FILE
-$jsondata = file_get_contents($myFile);
-
-// Convert JSON data into array
-$arr_data = json_decode($jsondata, true);
-
-//Validates Credentials
-foreach ($arr_data as $element)
-{
-$passCheck = current($arr_data);
-$userDataString = (implode("=", $passCheck));
-$userDataString = rtrim($userDataString, ":");
-$user = str_replace(".", "_", $user);
-parse_str($userDataString, $result);
-if (isset($result[$user]))
-{
-  if (password_verify($pass, $result[$user])){
-    //Valid Email and Pass
-    echo 'Validated Successfully';
-    //Start Session!
+while($record=$result->fetch()){
+if ($record['username'] == $user){
+  if ($record['password'] == $pass){
     session_start();
     $_SESSION["user"] = $user;
-    //print_r($_SESSION);
-  }
-  else {
-    //Valid Email, Invalid Pass
-    echo "Password Incorrect";
-    //Don't Start Session!
+    echo "Logged In Successfully!";
   }
 }
-else {
-  //Wrong Email Input
-  echo "Email not Recognized";
-  //Don't Start Session
-}
-
-}
-
 }
 
 
-
-
-
-
-
-
-
-
-
+}
 ?>
 
 <?php
