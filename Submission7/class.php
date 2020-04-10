@@ -31,6 +31,7 @@ Return "error";
 
 }
 
+/*
 class DB{
 
 
@@ -54,6 +55,7 @@ class DB{
 
 
 }
+*/
 
 
  ?>

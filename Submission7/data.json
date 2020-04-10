@@ -198,5 +198,15 @@
         "picture": "test",
         "location": "test",
         "owner": "branham.leavens@gmail.com"
+    },
+    {
+        "name": "Dog",
+        "breed": "Dog",
+        "age": "1",
+        "gender": "Male",
+        "bio": "Dog",
+        "picture": "Dog",
+        "location": "Dog",
+        "owner": "branham.leavens@gmail.com"
     }
 ]
