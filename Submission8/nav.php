@@ -48,15 +48,13 @@
             ?>
 
             <?php
-            //Currently Broken
+            //Only allows admin users access to admin page
             require 'sql.php';
             //print_r($_SESSION['user']);
             if (isset($_SESSION['user'])) {
 
-              $sql = 'SELECT admin FROM user_table WHERE username = "'.$_SESSION['user'].'"';
-              $stmt = $pdo->prepare($sql);
-              $var = $stmt->execute();
-              print_r($var);
+              $statement = 'SELECT admin FROM user_table WHERE username = "'.$_SESSION['user'].'"';
+              $stmt = $pdo->prepare($statement);
 
 
               if (($stmt->execute()) == 1)
