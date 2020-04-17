@@ -53,11 +53,19 @@
             //print_r($_SESSION['user']);
             if (isset($_SESSION['user'])) {
 
-              $statement = 'SELECT admin FROM user_table WHERE username = "'.$_SESSION['user'].'"';
-              $stmt = $pdo->prepare($statement);
+              $usrVar = $_SESSION['user'];
 
+              //$statement = 'SELECT admin FROM user_table WHERE username = "'.$_SESSION['user'].'"';
+              //$stmt = $pdo->prepare($statement);
+              //$result = $stmt->execute();
+              $res = $pdo -> prepare('SELECT admin FROM user_table WHERE username = :usrVar');
+              $res -> execute([':usrVar' => $usrVar]);
+              $result = $res -> fetchAll();
+              //print_r($result);
+              $numVal = $result[0]['admin'];
+              //print_r($numVal);
 
-              if (($stmt->execute()) == 1)
+              if ($numVal > 0)
               {
                 echo'
                 <li class="nav-item">
@@ -65,6 +73,7 @@
                 </li>
                 ';
               }
+
 
             }
             ?>
