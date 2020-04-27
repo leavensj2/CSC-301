@@ -69,6 +69,32 @@
               {
                 echo'
                 <li class="nav-item">
+                    <a class="nav-link" href="manager.php">Manager Page</a>
+                </li>
+                ';
+              }
+
+
+            }
+            ?>
+
+            <?php
+            //Only allows admin users access to admin page
+            require 'sql.php';
+            //print_r($_SESSION['user']);
+            if (isset($_SESSION['user'])) {
+
+              $usrVar = $_SESSION['user'];
+
+              $res = $pdo -> prepare('SELECT admin FROM user_table WHERE username = :usrVar');
+              $res -> execute([':usrVar' => $usrVar]);
+              $result = $res -> fetchAll();
+              $numVal = $result[0]['admin'];
+
+              if ($numVal > 0)
+              {
+                echo'
+                <li class="nav-item">
                     <a class="nav-link" href="admin.php">Admin Page</a>
                 </li>
                 ';

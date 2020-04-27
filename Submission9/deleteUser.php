@@ -2,7 +2,7 @@
 <?php
 
 require 'sql.php';
-$result=$pdo->query('DELETE FROM user_table WHERE username ='.$_GET['id']);
+$result=$pdo->query('DELETE FROM user_table WHERE id ='.$_GET['id']);
 $record=$result->fetch();
 
 ?>
@@ -57,4 +57,5 @@ $record=$result->fetch();
       </nav>
 
     </div>
+<h1> Successfully Deleted </h1>
   </div>
